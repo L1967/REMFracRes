@@ -1,0 +1,51 @@
+name: CD
+
+on:
+  push:
+    tags: 'v*'
+
+jobs:     
+  release-linux:
+    uses: Geode-solutions/actions/.github/workflows/cd-linux.yml@master
+    with:
+      name: OPENGEODE_MYMODULE
+      repos: OpenGeode
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
+
+  release-linux-python:
+    uses: Geode-solutions/actions/.github/workflows/cd-linux-python.yml@master
+    with:
+      name: OPENGEODE_MYMODULE
+      repos: OpenGeode
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
+      PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }} 
+
+  release-windows:
+    uses: Geode-solutions/actions/.github/workflows/cd-windows.yml@master
+    with:
+      name: OPENGEODE_MYMODULE
+      repos: OpenGeode
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  release-windows-python:
+    uses: Geode-solutions/actions/.github/workflows/cd-windows-python.yml@master
+    with:
+      name: OPENGEODE_MYMODULE
+      repos: OpenGeode
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }} 
+
+  notify:
+    uses: Geode-solutions/actions/.github/workflows/end-cd.yml@master
+    needs: [release-linux, release-linux-python, release-windows, release-windows-python]
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
