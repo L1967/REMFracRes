@@ -31,8 +31,8 @@ int main()
     try
     {
         OPENGEODE_EXCEPTION(
-            mymodule::hello_world(), "[Test] Hello World is not correct" );
-
+        remfracres::hello_world(), "[Test] Hello World is not correct" );
+        remfracres::test_fractures_boolean();
         geode::Logger::info( "TEST SUCCESS" );
         return 0;
     }

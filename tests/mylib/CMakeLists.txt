@@ -22,5 +22,12 @@ add_geode_test(
     SOURCE "test-hello-world.cpp"
     DEPENDENCIES
         OpenGeode::basic
+        OpenGeode::mesh
+        OpenGeode::geometry
+        OpenGeode::model
+        OpenGeode-IO::mesh
+        OpenGeode-IO::model
+        OpenGeode-Geosciences::geosciences
+        OpenGeode-GeosciencesIO::geosciences
         ${PROJECT_NAME}::mylib
 )

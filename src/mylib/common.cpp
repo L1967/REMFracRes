@@ -20,15 +20,16 @@
  * SOFTWARE.
  *
  */
-
+#include <mylib/common.h>
 #include <geode/basic/common.h>
 
-namespace
+namespace remfracres
 {
-    OPENGEODE_LIBRARY_INITIALIZE( myLib )
-    {
-        /* Here the functions to call when initializing the library
-         * For exemple: registers, ...
-         */
-    }
+	OPENGEODE_LIBRARY_IMPLEMENTATION( REMFracResMyLib )
+   {
+	   /* Here the functions to call when initializing the library
+		* For exemple: registers, ...
+		*/
+		geode::OpenGeodeBasic::initialize();
+   }
 } // namespace

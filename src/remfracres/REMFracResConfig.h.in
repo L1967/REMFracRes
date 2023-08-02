@@ -1,0 +1,22 @@
+#pragma once
+
+
+#ifndef INCLUDE_GUARD
+#define INCLUDE_GUARD
+
+
+#define REMFracRes_NAME "@REMFracRes_NAME@"
+#define REMFracRes_VER  "@REMFracRes_VERSION@"
+#define REMFracRes_VER_MAJOR "@REMFracRes_VERSION_MAJOR@"
+#define REMFracRes_VER_MINOR "@REMFracRes_VERSION_MINOR@"
+#define REMFracRes_VER_PATCH "@REMFracRes_VERSION_PATCH@"
+#include <string>
+
+
+/* Absolute path to test source directory */
+namespace remfracres{
+static constexpr auto data_path = "@DATA_DIRECTORY@/";
+bool  test_fractures_boolean();
+}
+ 
+#endif // INCLUDE_GUARD

@@ -23,9 +23,13 @@
 
 #pragma once
 
-#include <mylib/opengeode_mymodule_mylib_export.h>
+#include <mylib/common.h>
+#include <remfracres/RemFracResSim.h>
+#include <primitive_mesh/varglob.h>
+#include <primitive_mesh/contrainte_geo.h>
 
-namespace mymodule
+namespace remfracres
 {
-    bool opengeode_mymodule_mylib_api hello_world();
+    bool remfracres_mylib_api hello_world();
+    bool remfracres_mylib_api test_fractures_boolean();
 } // namespace mymodule
