@@ -1,5 +1,6 @@
 <h1 align="center">REMFracRES<sup><i>by In2Earth Modeling</i></sup></h1>
 <h3 align="center">Fracturing network modeling </h3>
+<h3 align="center">Juin 2022 </h3>
 
 
 ## License
